@@ -1,24 +1,29 @@
 <template>
   <v-container id="reportCard" fluid v-if="!!playerData">
     <v-row justify="center">
-      <v-col cols="11">
+      <v-col cols="12">
 
-        <v-card elevation="5">
+        <v-card elevation="5" :img="(!!backgroundImg)? backgroundImg: '../static/bg-1.jpg'">
+<!--          <v-img src="../static/bg3.jpg">-->
+
           <v-container fluid>
             <v-row justify="space-around">
 
               <v-col cols="12">
-                <h2 style="text-align: center">{{playerData.userName}} 生涯总览</h2>
+                <h1 style="text-align: center;">{{playerData.userName}} 生涯总览</h1>
               </v-col>
 
-              <v-col cols="8">
-                <v-card color="blue-grey lighten-5" class="mb-8">
+              <v-col cols="10">
+                <v-card :color="cardColor" class="mb-8">
 
                   <v-card-title class="mt-8">
                     <v-avatar size="64">
                       <img
+                        id="originAvatar"
                         alt="user"
-                        :src="playerData.avatar">
+                        :src="(!!playerData._avatarData)? playerData._avatarData: playerData._avatar"
+                      />
+<!--                      :src="(!!playerData._avatarData)? playerData._avatarData: playerData.avatar"-->
                     </v-avatar>
                     <p class="ml-3 font-weight-black">
                       {{playerData.userName}}
@@ -29,7 +34,7 @@
                     <v-spacer/>
                     <p>
                       <span class="font-italic text-caption">
-                        {{moment(new Date()).format('yyyy-MM-DD hh:mm:ss')}}
+                        {{moment(new Date()).format('yyyy-MM-DD HH:mm:ss')}}
                       </span>
                       <br/>
                       o.{{playerData.id}}
@@ -146,7 +151,7 @@
                         </v-row>
 
                         <v-row no-gutters justify="center">
-                          <v-col cols="4">倒地复活：</v-col>
+                          <v-col cols="4">倒地救援：</v-col>
                           <v-col cols="5">{{playerData.revives}}</v-col>
                         </v-row>
 
@@ -211,6 +216,8 @@
             <a v-else id="download" :href="blobUrl" :download="$route.query.id + '.png'">下载</a>
           </v-card-text>
 
+<!--          </v-img>-->
+
         </v-card>
       </v-col>
 
@@ -233,6 +240,7 @@ export default {
       playerData: undefined,
       screenshotsBlob: undefined,
       blobUrl: undefined,
+      backgroundImg: undefined,
       bfBanCheatMethodMapping: {
         'aimbot': '自瞄',
         'wallhack': '透视',
@@ -247,6 +255,7 @@ export default {
         '5': '回复讨论中',
         '6': '等待管理确认',
       },
+      cardColor: 'rgba(236,239,241,0.95)',
       bfBanReportContent: undefined
     }
   },
@@ -259,7 +268,7 @@ export default {
       option.series[0].data = []
 
       this.playerData.vehicles.forEach((value) => {
-        if(value.kills > 100){
+        if(value.kills > 0){
           option.series[0].data.push(
             {
               name: value.vehicleName,
@@ -271,6 +280,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
+      //取前20
+      option.series[0].data.splice(20)
 
       myChart.setOption(option)
     },
@@ -281,7 +292,7 @@ export default {
       option.series[0].data = []
 
       this.playerData.weapons.forEach((value) => {
-        if(value.kills > 100){
+        if(value.kills > 0){
           option.series[0].data.push(
             {
               name: value.weaponName,
@@ -293,6 +304,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
+      //取前20
+      option.series[0].data.splice(20)
 
       myChart.setOption(option)
     },
@@ -304,7 +317,7 @@ export default {
 
       let aaa = this.playerData.vehicles.concat(this.playerData.weapons)
       aaa.forEach((value) => {
-        if(value.kills > 100){
+        if(value.kills > 0){
           option.series[0].data.push(
             {
               name: (!!value.vehicleName)? value.vehicleName: value.weaponName,
@@ -316,6 +329,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
+      //取前20
+      option.series[0].data.splice(20)
 
       myChart.setOption(option)
     },
@@ -477,50 +492,88 @@ export default {
       }
 
       return data
+    },
+    getBlurImageBase64FromUrl(url, px, isProd){
+      return new Promise((resolve) => {
+        let image = new Image();
+
+        image.onload = function(){
+          if(isProd){
+            let width = image.width;
+            let height = image.height;
+
+            let canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            let ctx = canvas.getContext('2d');
+            ctx.filter = "blur("+px+"px)"
+            ctx.drawImage(image, 0, 0);
+            resolve(canvas.toDataURL('png'))
+          }else{
+            resolve(undefined)
+          }
+        }
+
+        image.src = url;
+      })
     }
   },
   mounted() {
 
     axios.get("https://api.gametools.network/bfv/all/?format_values=true&name="+this.$route.query.id+"&platform=pc&skip_battlelog=false&lang=zh-cn").then((res) => {
-      this.playerData = res.data
 
-      this.$nextTick(() => {
-        this.renderWinPercent()
-        this.renderCareerRadar()
-        this.renderTopKilledWithAllMethods()
-        this.renderAllKilledPie()
-        this.renderWeaponKilledPie()
-        this.renderVehicleKilledPie()
+      //生产环境下头像改为nginx代理的地址
+      if(res.data.avatar.indexOf("secure.gravatar.com") !== -1){
+        res.data._avatar = "../static/d_avatar.jpg"
+      } else if(dataUtils.isProdEnv()){
+        res.data._avatar = res.data.avatar.replace("https://secure.download.dm.origin.com/", "../originproxy/")
+      }else{
+        res.data._avatar = res.data.avatar.replace("https://secure.download.dm.origin.com/", "http://bfvreport.harryz.top/originproxy/")
+      }
 
-        setTimeout(() => {
-          html2canvas(document.getElementById("reportCard")).then((canvas) => {
-            this.screenshotsBlob = this.dataURLToBlob(canvas.toDataURL('image/png'));
-            // URL.revokeObjectURL(this.screenshotsBlob);
+      let enableAvatarBlur = !!this.$route.query.avatarBlur && this.$route.query.avatarBlur === 'true';
+      this.getBlurImageBase64FromUrl(res.data._avatar, enableAvatarBlur? 16: 0, dataUtils.isProdEnv()).then((base64) => {
+        this.playerData = res.data
+        this.playerData._avatarData = base64
+      }).finally(() => {
 
-            // let a = document.createElement('a');
-            // a.style.display = 'none'
-            // a.setAttribute('href', URL.createObjectURL(this.screenshotsBlob));
-            // a.setAttribute('download', `${this.playerData.userName}.png`);
-            //
-            // a.click();
+        this.$nextTick(() => {
+          this.renderWinPercent()
+          this.renderCareerRadar()
+          this.renderTopKilledWithAllMethods()
+          this.renderAllKilledPie()
+          this.renderWeaponKilledPie()
+          this.renderVehicleKilledPie()
 
-            if(!!this.$route.query.autoGenerate && this.$route.query.autoGenerate === 'true'){
-              this.generateDownload()
-            }
-          })
-        }, 5000)
+          //随机背景
+          if(!!this.$route.query.background && this.$route.query.background === 'true'){
+            this.backgroundImg = "../static/bg" + (Math.abs(Math.round(Math.random() * 10) - 5)) + ".jpg"
+          }
+
+          setTimeout(() => {
+            html2canvas(document.getElementById("reportCard")).then((canvas) => {
+              this.screenshotsBlob = this.dataURLToBlob(canvas.toDataURL('image/png'));
+
+              if(!!this.$route.query.autoGenerate && this.$route.query.autoGenerate === 'true'){
+                this.generateDownload()
+              }
+            })
+          }, 5000)
+
+        })
+
+        axios.get("https://api.gametools.network/bfban/checkban?names="+this.playerData.userName).then((res) => {
+          let lowerName = this.playerData.userName.toLowerCase();
+          let data = res.data.names[lowerName];
+
+          if(data.hacker || !!data.cheatMethods || !!data.status){
+            this.bfBanData = data
+          }
+
+        })
 
       })
-    }).then(() => {
-      axios.get("https://api.gametools.network/bfban/checkban?names="+this.playerData.userName).then((res) => {
-        let lowerName = this.playerData.userName.toLowerCase();
-        let data = res.data.names[lowerName];
 
-        if(data.hacker || !!data.cheatMethods || !!data.status){
-          this.bfBanData = data
-        }
-
-      })
     })
 
 

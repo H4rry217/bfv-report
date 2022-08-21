@@ -89,6 +89,10 @@ function quickSort(data){
   return left.push(pivot).concat(right)
 }
 
+function isProdEnv(){
+  return process.env.NODE_ENV === "production"
+}
+
 export default {
-  careerKilledStatistic, getTopKilledWithAllMethods, bubbleSort
+  careerKilledStatistic, getTopKilledWithAllMethods, bubbleSort, isProdEnv
 }

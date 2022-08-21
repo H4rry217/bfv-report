@@ -157,7 +157,7 @@ const topKilledBarWithAllMethods = {
 
 const allKilledPie = {
   title: {
-    text: '击杀总览',
+    text: '所有击杀方式前二十·总览',
     left: 'center'
   },
   tooltip: {
@@ -228,7 +228,7 @@ function weaponKilledPieFormatter(params){
 
 const weaponKilledPie = {
   title: {
-    text: '武器击杀总览',
+    text: '武器击杀前二十·总览',
     left: 'center',
   },
   tooltip: {
@@ -264,7 +264,7 @@ const weaponKilledPie = {
 
 const vehicleKilledPie = {
   title: {
-    text: '载具击杀总览',
+    text: '载具击杀前二十·总览',
     left: 'center',
   },
   tooltip: {
