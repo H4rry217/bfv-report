@@ -280,8 +280,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
-      //取前20
-      option.series[0].data.splice(20)
+      //取前10
+      option.series[0].data.splice(10)
 
       myChart.setOption(option)
     },
@@ -304,8 +304,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
-      //取前20
-      option.series[0].data.splice(20)
+      //取前10
+      option.series[0].data.splice(10)
 
       myChart.setOption(option)
     },
@@ -329,8 +329,8 @@ export default {
       })
 
       option.series[0].data = dataUtils.bubbleSort(option.series[0].data, 'value')
-      //取前20
-      option.series[0].data.splice(20)
+      //取前10
+      option.series[0].data.splice(10)
 
       myChart.setOption(option)
     },
@@ -421,11 +421,6 @@ export default {
         this.blobUrl = URL.createObjectURL(this.screenshotsBlob);
       }
     },
-    // screenshots(){
-    //   this.generateDownload()
-    //   // let a = document.getElementById('download')
-    //   // a.click();
-    // },
     bfBanReportRecord(){
       if(!this.bfBanReportContent){
         this.bfBanReportContent = {}
