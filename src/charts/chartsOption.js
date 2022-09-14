@@ -155,6 +155,57 @@ const topKilledBarWithAllMethods = {
   animationEasingUpdate: 'linear'
 };
 
+const robotCommunityMvpCount = {
+  title: {
+    text: "Robot机器人社区MVP总计",
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  grid: {
+    show: true,
+    containLabel: true,
+    backgroundColor: "rgba(242, 242, 242, 0.15)",
+    borderColor: "rgba(84, 84, 84, 0.33)"
+  },
+  xAxis: {
+    axisLine: { //坐标轴样式
+      lineStyle: {
+        color: '#6f6f6f',
+        width: 10
+      }
+    }
+  },
+  yAxis: {
+    type: 'category',
+    data: ['A', 'B', 'C', 'D', 'E'],
+    inverse: true,
+    animationDuration: 300,
+    animationDurationUpdate: 300,
+  },
+  series: [
+    {
+      // realtimeSort: true,
+      type: 'bar',
+      data: [1, 100, 1000, 200, 400],
+      label: {
+        show: true,
+        position: 'right',
+        valueAnimation: true
+      },
+      barWidth: "50%",
+      tooltip:{
+        formatter: '{b}：<span class="font-weight-bold">{c}</span>'
+      }
+    }
+  ],
+  animationDuration: 0,
+  animationDurationUpdate: 3000,
+  animationEasing: 'linear',
+  animationEasingUpdate: 'linear'
+};
+
 const allKilledPie = {
   title: {
     text: '所有击杀方式前十·总览',
@@ -299,5 +350,5 @@ const vehicleKilledPie = {
 };
 
 export default {
-  winPercent, careerRadar, topKilledBarWithAllMethods, allKilledPie, weaponKilledPie, vehicleKilledPie
+  winPercent, careerRadar, topKilledBarWithAllMethods, robotCommunityMvpCount, allKilledPie, weaponKilledPie, vehicleKilledPie
 }
