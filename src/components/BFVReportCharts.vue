@@ -83,6 +83,33 @@
 <!--                        Bfban <v-chip small dark color="red">认为石锤</v-chip>-->
 <!--                      </v-col>-->
                     </v-row>
+
+                    <v-row dense>
+                      <v-col cols="12">
+                        <span class="text-overline font-weight-black">Robot社区成就 </span>
+
+                        <v-tooltip bottom v-for="achievement in robotCommunity.achievement" :key="achievement.type">
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-chip v-if="!!(achievementData.achievement.achievements[achievement.type])"
+                                    v-bind="attrs" v-on="on" ripple small dark
+                                    :color="achievementData.achievementColor[achievementData.achievement.achievements[achievement.type].levelType]">
+                              {{achievementData.achievement.achievements[achievement.type].name}}
+<!--                              {{achievement.type}}-->
+                            </v-chip>
+                            <v-chip v-else v-bind="attrs" v-on="on" ripple small dark color="black">
+                              {{achievement.type}}
+                            </v-chip>
+                          </template>
+                          <span>
+                            <span v-if="!!(achievementData.achievement.achievements[achievement.type])">
+                              {{achievementData.achievement.achievements[achievement.type].level}}<br/>
+                            </span>
+                            {{achievement.date}}<br/>
+                          </span>
+                        </v-tooltip>
+
+                      </v-col>
+                    </v-row>
                   </v-card-subtitle>
 
                   <v-divider/>
@@ -203,6 +230,12 @@
                     </v-col>
                   </v-row>
 
+                  <v-row>
+                    <v-col cols="12">
+                      <div id="charts_robotMvpCount" style="height: 600px"/>
+                    </v-col>
+                  </v-row>
+
                 </v-card>
               </v-col>
 
@@ -231,6 +264,7 @@ import chartsOption from "../charts/chartsOption";
 import moment from 'moment'
 import dataUtils from "../datautils";
 import html2canvas from "html2canvas"
+import achievementData from "../achievement";
 
 export default {
   name: "BFVReportCharts",
@@ -241,6 +275,11 @@ export default {
       screenshotsBlob: undefined,
       blobUrl: undefined,
       backgroundImg: undefined,
+      achievementData: achievementData,
+      robotCommunity: {
+        mvp: [],
+        achievement: []
+      },
       bfBanCheatMethodMapping: {
         'aimbot': '自瞄',
         'wallhack': '透视',
@@ -346,6 +385,24 @@ export default {
       topKilled.forEach((value) => {
         option.yAxis.data.push((!!value.vehicleName)? value.vehicleName: value.weaponName)
         option.series[0].data.push(value.kills)
+      })
+
+      myChart.setOption(option)
+    },
+    renderRobotCommunityMvpCount(){
+      if(this.robotCommunity.mvp.length === 0) return
+
+      let option = chartsOption.robotCommunityMvpCount
+      let myChart = this.$echarts.init(document.getElementById("charts_robotMvpCount"),null, {renderer: 'svg'});
+
+      let mvpCount = dataUtils.bubbleSort(this.robotCommunity.mvp, 'value')
+
+      option.yAxis.data = []
+      option.series[0].data = []
+
+      mvpCount.forEach((value) => {
+        option.yAxis.data.push(value.name)
+        option.series[0].data.push(value.value)
       })
 
       myChart.setOption(option)
@@ -535,7 +592,14 @@ export default {
       this.getBlurImageBase64FromUrl(res.data._avatar, enableAvatarBlur? 16: 0, dataUtils.isProdEnv()).then((base64) => {
         this.playerData = res.data
         this.playerData._avatarData = base64
-      }).finally(() => {
+      }).then(axios.get("https://api.zth.ink/api/getCommunityStatus?pid="+res.data.id).then((robotRes) => {
+          //请求机器人社区数据
+          let comRes = robotRes.data
+          if(comRes.status === 1){
+            this.robotCommunity.mvp = comRes.data.mvp
+            this.robotCommunity.achievement = comRes.data.title
+          }
+        })).finally(() => {
 
         this.$nextTick(() => {
           this.renderWinPercent()
@@ -544,6 +608,8 @@ export default {
           this.renderAllKilledPie()
           this.renderWeaponKilledPie()
           this.renderVehicleKilledPie()
+
+          this.renderRobotCommunityMvpCount()
 
           //随机背景
           if(!!this.$route.query.background && this.$route.query.background === 'true'){

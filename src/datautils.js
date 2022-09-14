@@ -49,6 +49,9 @@ function bubbleSort(data, property){
 
     for (let j = 0; j < (data.length - i); j++) {
       if(j !== (data.length - 1)){
+        data[j][property] = Number(data[j][property]);
+        data[j + 1][property] = Number(data[j + 1][property])
+
         if(data[j][property] < data[j + 1][property]){
           let biggerTemp = data[j + 1];
           data[j + 1] = data[j]
