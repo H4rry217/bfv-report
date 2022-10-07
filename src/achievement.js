@@ -40,13 +40,13 @@ const achievement = {
       "code": "C48",
       "level": "游戏稀有成就C48",
       "levelType": "游戏稀有成就",
-      "name": "硫磺岛D家书"
+      "name": "硫磺岛の家书"
     },
     "C47": {
       "code": "C47",
       "level": "游戏稀有成就C47",
       "levelType": "游戏稀有成就",
-      "name": "沉静，无声，我引领死亡"
+      "name": "沉静,无声,我引领死亡"
     },
     "C49": {
       "code": "C49",
@@ -82,19 +82,13 @@ const achievement = {
       "code": "C53",
       "level": "游戏传说成就C53",
       "levelType": "游戏传说成就",
-      "name": "神射手(未实现) "
+      "name": "神射手(未实现"
     },
     "C52": {
       "code": "C52",
       "level": "游戏稀有成就C52",
       "levelType": "游戏稀有成就",
-      "name": "- 枪一个! "
-    },
-    "C11": {
-      "code": "C11",
-      "level": "游戏稀有成就C11",
-      "levelType": "游戏稀有成就",
-      "name": "菊次郎的春天"
+      "name": "一枪一个!"
     },
     "C55": {
       "code": "C55",
@@ -108,23 +102,11 @@ const achievement = {
       "levelType": "游戏普通成就",
       "name": "焊武帝"
     },
-    "C13": {
-      "code": "C13",
-      "level": "游戏稀有成就C13",
-      "levelType": "游戏稀有成就",
-      "name": "轮椅战神"
-    },
     "C57": {
       "code": "C57",
       "level": "游戏稀有成就C57",
       "levelType": "游戏稀有成就",
-      "name": "一个-"
-    },
-    "C12": {
-      "code": "C12",
-      "level": "游戏传说成就C12",
-      "levelType": "游戏传说成就",
-      "name": "恩怖分子"
+      "name": "-^-"
     },
     "C56": {
       "code": "C56",
@@ -132,53 +114,17 @@ const achievement = {
       "levelType": "游戏普通成就",
       "name": "数学家"
     },
-    "C15": {
-      "code": "C15",
-      "level": "游戏稀有成就C15",
-      "levelType": "游戏稀有成就",
-      "name": "山八山"
-    },
     "C59": {
       "code": "C59",
       "level": "游戏稀有成就C59",
       "levelType": "游戏稀有成就",
       "name": "最后的武士"
     },
-    "C14": {
-      "code": "C14",
-      "level": "游戏普通成就C14",
-      "levelType": "游戏普通成就",
-      "name": "小聋瞎"
-    },
     "C58": {
       "code": "C58",
       "level": "游戏普通成就C58",
       "levelType": "游戏普通成就",
       "name": "托尼老师"
-    },
-    "C17": {
-      "code": "C17",
-      "level": "游戏普通成就C17",
-      "levelType": "游戏普通成就",
-      "name": "逮虾户"
-    },
-    "C16": {
-      "code": "C16",
-      "level": "游戏稀有成就C16",
-      "levelType": "游戏稀有成就",
-      "name": "秋名山车神"
-    },
-    "C19": {
-      "code": "C19",
-      "level": "游戏稀有成就C19",
-      "levelType": "游戏稀有成就",
-      "name": "机你太美"
-    },
-    "C18": {
-      "code": "C18",
-      "level": "游戏普通成就C18",
-      "levelType": "游戏普通成就",
-      "name": "窃格瓦拉"
     },
     "B1": {
       "code": "B1",
@@ -234,17 +180,11 @@ const achievement = {
       "levelType": "社区贡献荣誉",
       "name": "一眼丁真"
     },
-    "C1D": {
-      "code": "C1D",
-      "level": "游戏普通成就C1D",
-      "levelType": "游戏普通成就",
-      "name": "泥头车"
-    },
     "C60": {
       "code": "C60",
       "level": "游戏稀有成就C60",
       "levelType": "游戏稀有成就",
-      "name": "午时已到"
+      "name": "午时己到"
     },
     "C62": {
       "code": "C62",
@@ -258,12 +198,6 @@ const achievement = {
       "levelType": "游戏普通成就",
       "name": "收藏家"
     },
-    "C20": {
-      "code": "C20",
-      "level": "游戏普通成就C20",
-      "levelType": "游戏普通成就",
-      "name": "梦里都是这三分(未实现)"
-    },
     "C64": {
       "code": "C64",
       "level": "游戏稀有成就C64",
@@ -274,13 +208,7 @@ const achievement = {
       "code": "C63",
       "level": "游戏稀有成就C63",
       "levelType": "游戏稀有成就",
-      "name": "红茶佬的移动茶餐厅"
-    },
-    "C22": {
-      "code": "C22",
-      "level": "游戏稀有成就C22",
-      "levelType": "游戏稀有成就",
-      "name": "太平洋虎王"
+      "name": "红荼佬的移动茶餐厅"
     },
     "C66": {
       "code": "C66",
@@ -288,35 +216,17 @@ const achievement = {
       "levelType": "游戏普通成就",
       "name": "老赖"
     },
-    "C21": {
-      "code": "C21",
-      "level": "游戏传说成就C21",
-      "levelType": "游戏传说成就",
-      "name": "管弦乐大师"
-    },
     "C65": {
       "code": "C65",
       "level": "游戏稀有成就C65",
       "levelType": "游戏稀有成就",
       "name": "帝国的雄鹰"
     },
-    "C24": {
-      "code": "C24",
-      "level": "游戏普通成就C24",
-      "levelType": "游戏普通成就",
-      "name": "有人急了"
-    },
     "C68": {
       "code": "C68",
       "level": "游戏稀有成就C68",
       "levelType": "游戏稀有成就",
-      "name": "好枪，就是费指头"
-    },
-    "C23": {
-      "code": "C23",
-      "level": "游戏稀有成就C23",
-      "levelType": "游戏稀有成就",
-      "name": "三斤的鸭子两斤半的嘴"
+      "name": "好枪,就是费指头"
     },
     "C67": {
       "code": "C67",
@@ -324,41 +234,11 @@ const achievement = {
       "levelType": "游戏稀有成就",
       "name": "半秒结束战斗"
     },
-    "C26": {
-      "code": "C26",
-      "level": "游戏稀有成就C26",
+    "C69": {
+      "code": "C69",
+      "level": "游戏稀有成就C69",
       "levelType": "游戏稀有成就",
-      "name": "来，叫霸霸"
-    },
-    "C25": {
-      "code": "C25",
-      "level": "游戏稀有成就C25",
-      "levelType": "游戏稀有成就",
-      "name": "大佬，来根华子?(未实现)"
-    },
-    "C10": {
-      "code": "C10",
-      "level": "游戏普通成就C10",
-      "levelType": "游戏普通成就",
-      "name": "泥头车"
-    },
-    "C28": {
-      "code": "C28",
-      "level": "游戏史诗成就C28",
-      "levelType": "游戏史诗成就",
-      "name": "莆田神医"
-    },
-    "C27": {
-      "code": "C27",
-      "level": "游戏普通成就C27",
-      "levelType": "游戏普通成就",
-      "name": "天谴之人"
-    },
-    "C29": {
-      "code": "C29",
-      "level": "游戏稀有成就C29",
-      "levelType": "游戏稀有成就",
-      "name": "日丕落帝国之盾"
+      "name": "狼蛛"
     },
     "C1": {
       "code": "C1",
@@ -413,6 +293,180 @@ const achievement = {
       "level": "游戏稀有成就C9",
       "levelType": "游戏稀有成就",
       "name": "白给王"
+    },
+    "C71": {
+      "code": "C71",
+      "level": "游戏传说成就C71",
+      "levelType": "游戏传说成就",
+      "name": "一将功成方骨枯"
+    },
+    "C70": {
+      "code": "C70",
+      "level": "游戏普通成就C70",
+      "levelType": "游戏普通成就",
+      "name": "此枪，诸神谢罪"
+    },
+    "C73": {
+      "code": "C73",
+      "level": "游戏普通成就C73",
+      "levelType": "游戏普通成就",
+      "name": "连杀终结者"
+    },
+    "C72": {
+      "code": "C72",
+      "level": "游戏传说成就C72",
+      "levelType": "游戏传说成就",
+      "name": "哟,搁这并会呢"
+    },
+    "C75": {
+      "code": "C75",
+      "level": "游戏传说成就C75",
+      "levelType": "游戏传说成就",
+      "name": "无产阶级展雄风"
+    },
+    "C74": {
+      "code": "C74",
+      "level": "游戏稀有成就C74",
+      "levelType": "游戏稀有成就",
+      "name": "空降猎兵"
+    },
+    "C77": {
+      "code": "C77",
+      "level": "游戏稀有成就C77",
+      "levelType": "游戏稀有成就",
+      "name": "我,要成为双马尾"
+    },
+    "C76": {
+      "code": "C76",
+      "level": "游戏稀有成就C76",
+      "levelType": "游戏稀有成就",
+      "name": "十六夜咲夜"
+    },
+    "C79": {
+      "code": "C79",
+      "level": "游戏稀有成就C79",
+      "levelType": "游戏稀有成就",
+      "name": "南丁格尔"
+    },
+    "C11": {
+      "code": "C11",
+      "level": "游戏稀有成就C11",
+      "levelType": "游戏稀有成就",
+      "name": "菊次郎的春天"
+    },
+    "C10": {
+      "code": "C10",
+      "level": "游戏普通成就C10",
+      "levelType": "游戏普通成就",
+      "name": "泥头车"
+    },
+    "C13": {
+      "code": "C13",
+      "level": "游戏稀有成就C13",
+      "levelType": "游戏稀有成就",
+      "name": "轮椅战神"
+    },
+    "C12": {
+      "code": "C12",
+      "level": "游戏传说成就C12",
+      "levelType": "游戏传说成就",
+      "name": "恐怖分子"
+    },
+    "C15": {
+      "code": "C15",
+      "level": "游戏稀有成就C15",
+      "levelType": "游戏稀有成就",
+      "name": "山八山"
+    },
+    "C14": {
+      "code": "C14",
+      "level": "游戏普通成就C14",
+      "levelType": "游戏普通成就",
+      "name": "小聋瞎"
+    },
+    "C17": {
+      "code": "C17",
+      "level": "游戏普通成就C17",
+      "levelType": "游戏普通成就",
+      "name": "逮虾户"
+    },
+    "C16": {
+      "code": "C16",
+      "level": "游戏稀有成就C16",
+      "levelType": "游戏稀有成就",
+      "name": "秋名山车神"
+    },
+    "C19": {
+      "code": "C19",
+      "level": "游戏稀有成就C19",
+      "levelType": "游戏稀有成就",
+      "name": "机你太美"
+    },
+    "C18": {
+      "code": "C18",
+      "level": "游戏普通成就C18",
+      "levelType": "游戏普通成就",
+      "name": "窃格瓦拉"
+    },
+    "C20": {
+      "code": "C20",
+      "level": "游戏普通成就C20",
+      "levelType": "游戏普通成就",
+      "name": "梦里都是这三分(未实现)"
+    },
+    "C22": {
+      "code": "C22",
+      "level": "游戏稀有成就C22",
+      "levelType": "游戏稀有成就",
+      "name": "太平洋虎王"
+    },
+    "C21": {
+      "code": "C21",
+      "level": "游戏传说成就C21",
+      "levelType": "游戏传说成就",
+      "name": "管弦乐大师"
+    },
+    "C24": {
+      "code": "C24",
+      "level": "游戏普通成就C24",
+      "levelType": "游戏普通成就",
+      "name": "有人急了"
+    },
+    "C23": {
+      "code": "C23",
+      "level": "游戏稀有成就C23",
+      "levelType": "游戏稀有成就",
+      "name": "三斤的鸭子两斤半的嘴"
+    },
+    "C26": {
+      "code": "C26",
+      "level": "游戏稀有成就C26",
+      "levelType": "游戏稀有成就",
+      "name": "来，叫霸霸"
+    },
+    "C25": {
+      "code": "C25",
+      "level": "游戏稀有成就C25",
+      "levelType": "游戏稀有成就",
+      "name": "大佬，来根华子?(未实现)"
+    },
+    "C28": {
+      "code": "C28",
+      "level": "游戏史诗成就C28",
+      "levelType": "游戏史诗成就",
+      "name": "莆田神医"
+    },
+    "C27": {
+      "code": "C27",
+      "level": "游戏普通成就C27",
+      "levelType": "游戏普通成就",
+      "name": "天谴之人"
+    },
+    "C29": {
+      "code": "C29",
+      "level": "游戏稀有成就C29",
+      "levelType": "游戏稀有成就",
+      "name": "日丕落帝国之盾"
     },
     "C31": {
       "code": "C31",
@@ -470,8 +524,8 @@ const achievement = {
     },
     "B14": {
       "code": "B14",
-      "level": "B14",
-      "levelType": "B14",
+      "level": "特定娱乐赛事荣誉B14",
+      "levelType": "特定娱乐赛事荣誉",
       "name": "帝中帝"
     },
     "C34": {
@@ -482,9 +536,9 @@ const achievement = {
     },
     "B15": {
       "code": "B15",
-      "level": "B15",
-      "levelType": "B15",
-      "name": "帝中弟"
+      "level": "特定娱乐赛事荣誉B15",
+      "levelType": "特定娱乐赛事荣誉",
+      "name": "帝中第"
     },
     "C37": {
       "code": "C37",
@@ -494,8 +548,8 @@ const achievement = {
     },
     "B16": {
       "code": "B16",
-      "level": "B16",
-      "levelType": "B16",
+      "level": "特定娱乐赛事荣誉B16",
+      "levelType": "特定娱乐赛事荣誉",
       "name": "皇家守卫军"
     },
     "C36": {
@@ -506,9 +560,9 @@ const achievement = {
     },
     "B17": {
       "code": "B17",
-      "level": "B17",
-      "levelType": "B17",
-      "name": "站住，核酸检查! "
+      "level": "通用娱乐赛事荣誉B17",
+      "levelType": "通用娱乐赛事荣誉",
+      "name": "站住,核酸检查!"
     },
     "C39": {
       "code": "C39",
@@ -518,9 +572,9 @@ const achievement = {
     },
     "B18": {
       "code": "B18",
-      "level": "B18",
-      "levelType": "B18",
-      "name": "一服薯，速来"
+      "level": "通用娱乐赛事荣誉B18",
+      "levelType": "通用娱乐赛事荣誉",
+      "name": "一服薯,速来"
     },
     "C38": {
       "code": "C38",
@@ -535,32 +589,22 @@ const achievement = {
       "name": "雅利安超人"
     }
   },
-  "achievementWithoutLevel": [
-    "B14",
-    "B15",
-    "B16",
-    "B17",
-    "B18"
-  ],
+  "achievementWithoutLevel": [],
   "achievementCount": {
-    "": 5,
     "游戏史诗成就": 1,
     "限定": 1,
     "社区贡献荣誉": 12,
-    "游戏普通成就": 22,
-    "游戏稀有成就": 38,
-    "游戏传说成就": 7,
+    "通用娱乐赛事荣誉": 2,
+    "游戏普通成就": 24,
+    "游戏稀有成就": 43,
+    "游戏传说成就": 10,
     "限时活动限定": 1,
-    "赛事荣誉": 1
+    "赛事荣誉": 1,
+    "特定娱乐赛事荣誉": 3
   }
 }
 
 const achievementColor = {
-  "B14": "red",
-  "B15": "red",
-  "B16": "red",
-  "B17": "red",
-  "B18": "red",
   "游戏史诗成就": "purple",
   "限定": "brown",
   "社区贡献荣誉": "red",
@@ -568,7 +612,9 @@ const achievementColor = {
   "游戏稀有成就": "pink",
   "游戏传说成就": "red",
   "限时活动限定": "brown",
-  "赛事荣誉": "orange"
+  "赛事荣誉": "orange",
+  "特定娱乐赛事荣誉": "red",
+  "通用娱乐赛事荣誉": "pink"
 }
 
 export default {

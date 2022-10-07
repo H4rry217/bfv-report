@@ -587,19 +587,18 @@ export default {
       }else{
         res.data._avatar = res.data.avatar.replace("https://secure.download.dm.origin.com/", "http://bfvreport.harryz.top/originproxy/")
       }
-
       let enableAvatarBlur = !!this.$route.query.avatarBlur && this.$route.query.avatarBlur === 'true';
       this.getBlurImageBase64FromUrl(res.data._avatar, enableAvatarBlur? 16: 0, dataUtils.isProdEnv()).then((base64) => {
         this.playerData = res.data
         this.playerData._avatarData = base64
       }).then(axios.get("https://api.zth.ink/api/getCommunityStatus?pid="+res.data.id).then((robotRes) => {
-          //请求机器人社区数据
-          let comRes = robotRes.data
-          if(comRes.status === 1){
-            this.robotCommunity.mvp = comRes.data.mvp
-            this.robotCommunity.achievement = comRes.data.title
-          }
-        })).finally(() => {
+        //请求机器人社区数据
+        let comRes = robotRes.data
+        if(comRes.status === 1){
+          this.robotCommunity.mvp = comRes.data.mvp
+          this.robotCommunity.achievement = comRes.data.title
+        }
+      })).finally(() => {
 
         this.$nextTick(() => {
           this.renderWinPercent()
