@@ -88,7 +88,7 @@ const achievement = {
       "code": "C47",
       "level": "游戏稀有成就C47",
       "levelType": "游戏稀有成就",
-      "name": "沉静,无声,我引领死亡"
+      "name": "沉静,无声，我引领死亡"
     },
     "C49": {
       "code": "C49",
@@ -130,13 +130,13 @@ const achievement = {
       "code": "C53",
       "level": "游戏传说成就C53",
       "levelType": "游戏传说成就",
-      "name": "神射手(未实现) "
+      "name": "神射手"
     },
     "C52": {
       "code": "C52",
       "level": "游戏稀有成就C52",
       "levelType": "游戏稀有成就",
-      "name": "一枪一个! "
+      "name": "一枪一个!"
     },
     "C55": {
       "code": "C55",
@@ -154,7 +154,7 @@ const achievement = {
       "code": "C57",
       "level": "游戏传说成就C57",
       "levelType": "游戏传说成就",
-      "name": "一个-"
+      "name": "-一-"
     },
     "C56": {
       "code": "C56",
@@ -498,6 +498,12 @@ const achievement = {
       "levelType": "游戏稀有成就",
       "name": "完美主义者"
     },
+    "C97": {
+      "code": "C97",
+      "level": "游戏稀有成就C97",
+      "levelType": "游戏稀有成就",
+      "name": "铁皮人"
+    },
     "C96": {
       "code": "C96",
       "level": "游戏传说成就C96",
@@ -510,11 +516,23 @@ const achievement = {
       "levelType": "游戏稀有成就",
       "name": "菊次郎的春天"
     },
+    "C99": {
+      "code": "C99",
+      "level": "游戏传说成就C99",
+      "levelType": "游戏传说成就",
+      "name": "最后的帝国师"
+    },
     "C10": {
       "code": "C10",
       "level": "游戏普通成就C10",
       "levelType": "游戏普通成就",
       "name": "泥头车"
+    },
+    "C98": {
+      "code": "C98",
+      "level": "游戏稀有成就C98",
+      "levelType": "游戏稀有成就",
+      "name": "看!蘑菇云!"
     },
     "C13": {
       "code": "C13",
@@ -612,11 +630,29 @@ const achievement = {
       "levelType": "游戏传说成就",
       "name": "莆田神医"
     },
+    "C109": {
+      "code": "C109",
+      "level": "游戏普通成就C109",
+      "levelType": "游戏普通成就",
+      "name": "斤斤计较"
+    },
     "C27": {
       "code": "C27",
       "level": "游戏普通成就C27",
       "levelType": "游戏普通成就",
       "name": "天谴之人"
+    },
+    "C108": {
+      "code": "C108",
+      "level": "游戏传说成就C108",
+      "levelType": "游戏传说成就",
+      "name": "郎森打火机"
+    },
+    "C107": {
+      "code": "C107",
+      "level": "游戏传说成就C107",
+      "levelType": "游戏传说成就",
+      "name": "花如樱美,人若武士威"
     },
     "C29": {
       "code": "C29",
@@ -624,16 +660,52 @@ const achievement = {
       "levelType": "游戏传说成就",
       "name": "日不落帝国之盾"
     },
+    "C106": {
+      "code": "C106",
+      "level": "游戏传说成就C106",
+      "levelType": "游戏传说成就",
+      "name": "猛虎永无末路"
+    },
+    "C105": {
+      "code": "C105",
+      "level": "游戏稀有成就C105",
+      "levelType": "游戏稀有成就",
+      "name": "劈波斩浪"
+    },
+    "C104": {
+      "code": "C104",
+      "level": "游戏传说成就C104",
+      "levelType": "游戏传说成就",
+      "name": "星星之火可以燎人"
+    },
+    "C103": {
+      "code": "C103",
+      "level": "游戏传说成就C103",
+      "levelType": "游戏传说成就",
+      "name": "拔粪宝"
+    },
+    "C102": {
+      "code": "C102",
+      "level": "游戏传说成就C102",
+      "levelType": "游戏传说成就",
+      "name": "两天一流"
+    },
+    "C101": {
+      "code": "C101",
+      "level": "游戏传说成就C101",
+      "levelType": "游戏传说成就",
+      "name": "太平洋鳄霸"
+    },
     "C100": {
       "code": "C100",
       "level": "游戏传说成就C100",
       "levelType": "游戏传说成就",
-      "name": "Hall Of Fame "
+      "name": "Hall Of Fame"
     },
     "C31": {
       "code": "C31",
-      "level": "游戏史诗成就C31",
-      "levelType": "游戏史诗成就",
+      "level": "游戏传说成就C31",
+      "levelType": "游戏传说成就",
       "name": "纵火者"
     },
     "B10": {
@@ -694,7 +766,7 @@ const achievement = {
       "code": "C34",
       "level": "游戏稀有成就C34",
       "levelType": "游戏稀有成就",
-      "name": "和平使者(未实现) "
+      "name": "和平使者"
     },
     "B15": {
       "code": "B15",
@@ -716,8 +788,8 @@ const achievement = {
     },
     "C36": {
       "code": "C36",
-      "level": "游戏史诗成就C36",
-      "levelType": "游戏史诗成就",
+      "level": "游戏传说成就C36",
+      "levelType": "游戏传说成就",
       "name": "你他娘的意大利炮呢?"
     },
     "B17": {
@@ -730,7 +802,7 @@ const achievement = {
       "code": "C39",
       "level": "游戏普通成就C39",
       "levelType": "游戏普通成就",
-      "name": "快!扶我起来,我还能送! "
+      "name": "快!扶我起来,我还能送!"
     },
     "B18": {
       "code": "B18",
@@ -740,8 +812,8 @@ const achievement = {
     },
     "C38": {
       "code": "C38",
-      "level": "游戏稀有成就C38",
-      "levelType": "游戏稀有成就",
+      "level": "游戏传说成就C38",
+      "levelType": "游戏传说成就",
       "name": "快枪手"
     },
     "B19": {
@@ -749,6 +821,12 @@ const achievement = {
       "level": "特定娱乐赛事荣誉B19",
       "levelType": "特定娱乐赛事荣誉",
       "name": "突击枪男"
+    },
+    "C110": {
+      "code": "C110",
+      "level": "游戏传说成就C110",
+      "levelType": "游戏传说成就",
+      "name": "烟中恶鬼"
     },
     "C40": {
       "code": "C40",
@@ -759,13 +837,13 @@ const achievement = {
   },
   "achievementWithoutLevel": [ ],
   "achievementCount": {
-    "游戏史诗成就": 8,
+    "游戏史诗成就": 6,
     "限定": 1,
     "社区贡献荣誉": 14,
     "通用娱乐赛事荣誉": 2,
-    "游戏普通成就": 27,
-    "游戏稀有成就": 23,
-    "游戏传说成就": 39,
+    "游戏普通成就": 28,
+    "游戏稀有成就": 25,
+    "游戏传说成就": 51,
     "限时活动限定": 2,
     "赛事纪念成就": 1,
     "赛事荣誉": 1,
