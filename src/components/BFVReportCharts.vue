@@ -74,7 +74,7 @@
                         </v-menu>
 
                         <span v-if="!!bfBanData.cheatMethods">
-                          <v-chip ripple small dark color="orange" v-for="key in bfBanData.cheatMethods.split(',')" :key="key">
+                          <v-chip ripple small dark color="orange" v-for="key in bfBanData.cheatMethods" :key="key">
                           {{bfBanCheatMethodMapping[key]}}
                         </v-chip>
                         </span>
